@@ -20,9 +20,6 @@ exports.max = function max (array) {
 }
 
 exports.avg = function avg (array) {
-  let sum = 0
-  for(i = 0; i < array.length; i++){
-    sum += array[i]
-  }
-  return sum / array.length;
+  let sum = array.reduce((a, b) => a + b, 0);
+  return sum / array.length
 }
