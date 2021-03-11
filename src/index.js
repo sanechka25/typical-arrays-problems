@@ -1,6 +1,9 @@
 
-exports.min = function min (array) {
+exports.min = function min (array = []) {
   let min = array[0]
+  if(array.length == 0) {
+    return 0
+  }
   for(i = 0; i < array.length; i++){
     if(array[i] < min){
       min = array[i]
@@ -9,8 +12,12 @@ exports.min = function min (array) {
   return min;
 }
 
-exports.max = function max (array) {
+exports.max = function max (array = []) {
   let max = array[0]
+  let min = array[0]
+  if(array.length == 0) {
+    return 0
+  }
   for(i = 0; i < array.length; i++){
     if(array[i] > max){
       max = array[i]
@@ -19,7 +26,14 @@ exports.max = function max (array) {
   return max;
 }
 
-exports.avg = function avg (array) {
-  let sum = array.reduce((a, b) => a + b, 0);
+exports.avg = function avg (array = []) {
+  let min = array[0]
+  if(array.length == 0) {
+    return 0
+  }
+  let sum = 0
+  for(i = 0; i < array.length; i++){
+    sum += array[i]
+  }
   return sum / array.length
 }
